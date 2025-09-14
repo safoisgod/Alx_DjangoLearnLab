@@ -1,13 +1,17 @@
+<!-- edit_book.html -->
 <!DOCTYPE html>
-<html>
-<head><title>Edit Book</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+</head>
 <body>
     <h1>Edit Book</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Update</button>
+        <button type="submit">Update Book</button>
     </form>
-    <a href="{% url 'list_books' %}">Back to Books</a>
+    <a href="{% url 'list_books' %}">Back to Book List</a>
 </body>
 </html>
