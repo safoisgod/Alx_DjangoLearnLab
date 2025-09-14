@@ -1,16 +1,16 @@
 from relationship_app.models import Author, Book, Library, Librarian
 
 # Query all books by a specific author
-def get_books_by_author(author_name):
-    author = Author.objects.get(name=author_name)
-    return Book.objects.filter(author=author)
+author_name = "Author Name"
+author = Author.objects.get(name=author_name)
+books_by_author = Book.objects.filter(author=author)
+print("Books by Author:", list(books_by_author))
 
-# List all books in a library
-def get_books_in_library(library_name):
-    library = Library.objects.get(name=library_name)  # Must match expected syntax
-    return library.books.all()
+library_name = "Library Name"
+library = Library.objects.get(name=library_name)
+books_in_library = library.books.all()
+print("Books in Library:", list(books_in_library))
 
 # Retrieve the librarian for a library
-def get_librarian_for_library(library_name):
-    librarian = Librarian.objects.get(library=Library.objects.get(name=library_name))  # ✅ checker expects this
-    return librarian
+librarian = Librarian.objects.get(library=library)
+print("Librarian for Library:", librarian)

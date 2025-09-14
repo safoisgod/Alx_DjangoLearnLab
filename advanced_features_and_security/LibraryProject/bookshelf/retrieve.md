@@ -1,26 +1,13 @@
-\# Retrieve Book Entries
-
-
-
-\## Command used:
-
-```python
+command
 
 from bookshelf.models import Book
+book = Book.objects.get(title="1984")
+book.title
+book.author
+book.publication_year
 
-Book.objects.get(title="1984")
+output
 
-```
-
-
-
-\## Output:
-
-```python
-
-<Book: 1984 by George Orwell (1949)>
-
-```
-
-
-
+'1984'
+'George Orwell'
+1949
