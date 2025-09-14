@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import Book
 
-@admin.register(CustomUser)
-class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email', 'date_of_birth')
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ("title", "author", "publication_year")
+    search_fields = ("title", "author")
+    list_filter = ("publication_year",)
+    list_editable = ("publication_year",)
+
+admin.site.register(Book, BookAdmin)
+# Register your models here.

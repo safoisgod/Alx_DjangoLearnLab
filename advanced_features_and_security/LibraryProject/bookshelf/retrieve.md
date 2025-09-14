@@ -1,26 +1,12 @@
-\# Retrieve Book Entries
-
-
-
-\## Command used:
+# retrieve
 
 ```python
-
 from bookshelf.models import Book
 
-Book.objects.get(title="1984")
 
+books  = Book.objects.all()
+print(books)
+
+first_book = Book.objects.first()
+print(first_book.title, first_book.author, first_book.publication_year)
 ```
-
-
-
-\## Output:
-
-```python
-
-<Book: 1984 by George Orwell (1949)>
-
-```
-
-
-

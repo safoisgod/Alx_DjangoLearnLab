@@ -1,10 +1,11 @@
+# delete
+
+```python
 from bookshelf.models import Book
 
-book = Book.objects.get(title="Nineteen Eighty-Four")
-
+book = Book.objects.get(title="nineteen eighty-four")
 book.delete()
 
-Book.objects.all()
+print(Book.objects.all())
 
-
-
+```
